@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GradesParentViewController">
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%gradesParentViewGrades" wrappingWidth="454.3367004394531" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="16.0" />
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Text fx:id="studentsName" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" top="10.0" />
+               </BorderPane.margin>
+            </Text>
+         </top>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="gradeTV" prefHeight="240.0" prefWidth="600.0">
+                    <placeholder>
+	                  <Label text="%gradesTableEmpty" />
+	                </placeholder>
+                  </TableView>
+                  <Text fx:id="averageGrade" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </center>
+   <padding>
+      <Insets left="16.0" right="16.0" />
+   </padding>
+</BorderPane>

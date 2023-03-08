@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="551.0" prefWidth="1261.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RegistrationViewController">
+   <top>
+      <Label text="%registerviewTitle" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="16.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <HBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="1539.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="500.0" prefWidth="471.0">
+               <children>
+                  <GridPane prefHeight="364.0" prefWidth="313.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="%registerviewUserType" GridPane.columnSpan="2">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="teacherButton" mnemonicParsing="false" onAction="#onTypeChange" text="%registerviewTeacher" GridPane.rowIndex="1">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="userType" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="parentButton" mnemonicParsing="false" onAction="#onTypeChange" selected="true" text="%registerviewGuardian" toggleGroup="$userType" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font></RadioButton>
+                        <TextField fx:id="firstName" prefWidth="255.0" promptText="%firstname" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="lastName" prefWidth="255.0" promptText="%lastname" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="number" prefWidth="255.0" promptText="%registerviewPhonenumber" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <TextField fx:id="email" prefWidth="255.0" promptText="%registerviewEmail" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <Button fx:id="addStudent" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openStudents" prefHeight="25.0" prefWidth="825.0" text="%registerviewAddStudent" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin></Button>
+                        <Label text="%firstname" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="%lastname" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="%registerviewPhonenumber" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="%registerviewEmail" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <ListView fx:id="studentListView" prefHeight="39.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="7" GridPane.rowSpan="2" />
+                        <Button fx:id="register" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#registerUser" prefHeight="64.0" prefWidth="481.0" text="%registerviewAddUser" GridPane.columnSpan="2" GridPane.rowIndex="10" GridPane.rowSpan="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="errorText" alignment="CENTER" prefHeight="32.0" prefWidth="453.0" textAlignment="CENTER" textFill="RED" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <padding>
+      <Insets left="16.0" right="16.0" />
+   </padding>
+</BorderPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.2276069518716577" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ConversationViewController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%conversationViewConversations" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="16.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="name" layoutX="610.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="173.0" promptText="%conversationViewName" AnchorPane.bottomAnchor="91.0" AnchorPane.rightAnchor="15.0" />
+            <ChoiceBox fx:id="searchFilters" layoutX="474.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="126.0" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="198.0" />
+            <Button fx:id="search" layoutX="685.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#searchConversations" prefHeight="30.0" prefWidth="100.0" text="%conversationViewSearch" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="13.0" />
+            <DatePicker fx:id="date" layoutX="609.0" layoutY="54.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="%conversationViewDate" AnchorPane.bottomAnchor="54.0" AnchorPane.rightAnchor="15.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TableView fx:id="conversationsTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="402.0" prefWidth="799.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <placeholder>
+	            <Label text="%conversationsTableEmpty" />
+	          </placeholder>
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="260.0000427365303" text="%conversationViewName" />
+                <TableColumn fx:id="dateColumn" minWidth="1.600006103515625" prefWidth="143.199951171875" text="%conversationViewDate" />
+                  <TableColumn fx:id="stateColumn" prefWidth="255.2000732421875" text="%conversationViewState" />
+                  <TableColumn fx:id="buttonColumn" editable="false" prefWidth="137.5999755859375" sortable="false" />
+              </columns>
+            </TableView>
+            <ChoiceBox fx:id="users" layoutX="542.0" layoutY="418.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="126.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="130.0" />
+            <Button layoutX="687.0" layoutY="418.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#startNewConversation" text="%conversationViewNewConvo" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="13.0" />
+         </children></AnchorPane>
+  </items>
+   <padding>
+      <Insets left="16.0" right="16.0" />
+   </padding>
+</SplitPane>

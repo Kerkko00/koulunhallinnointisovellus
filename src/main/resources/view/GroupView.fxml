@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GroupViewController">
+   <top>
+      <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="928.0" text="%groups" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="16.0" top="16.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <HBox spacing="16.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="500.0" spacing="4.0">
+               <children>
+                  <Label text="%groupViewCreateGroup">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </Label>
+                  <VBox>
+                     <children>
+                        <Label text="%groupViewNameTitle">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="groupName" maxWidth="-Infinity" prefWidth="160.0" promptText="%name">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="%groupViewAddStudentTitle">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="8.0">
+                           <children>
+                              <TextField fx:id="studentNameTextField" prefWidth="160.0" promptText="%groupViewAddStudentHelper">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addStudent" text="%groupViewAddToGroup">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="%groupViewStudentsInGroupTitle">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="studentTV" prefHeight="200.0" prefWidth="200.0">
+                          <placeholder>
+	                        <Label text="%groupStudentsTableEmpty" />
+	                      </placeholder>
+                          <columns>
+                            <TableColumn fx:id="studentFNameColumn" prefWidth="125.0" text="%firstname" />
+                            <TableColumn fx:id="studentLNameColumn" prefWidth="125.0" text="%lastname" />
+                              <TableColumn fx:id="studentActionsColumn" prefWidth="75.0" text="%actions" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <Button fx:id="createGroup" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createGroup" text="%groupViewCreateGroupButton">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </VBox>
+            <VBox prefWidth="500.0">
+               <children>
+                  <Label text="%groupViewActiveGroups">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="groupTV" prefHeight="200.0" prefWidth="200.0">
+                    <placeholder>
+	                  <Label text="%groupsTableEmpty" />
+	                </placeholder>
+                    <columns>
+                      <TableColumn fx:id="groupNameColumn" prefWidth="150.0" text="%name" />
+                      <TableColumn fx:id="groupActionsColumn" prefWidth="75.0" text="%actions" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="16.0" />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+   <padding>
+      <Insets left="16.0" right="16.0" />
+   </padding>
+</BorderPane>

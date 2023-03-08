@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="312.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AbsenceAddViewController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#cancelButton" text="%cancel" />
+            <Button mnemonicParsing="false" onAction="#addNewAbsence" text="%add" />
+        </buttons>
+         <padding>
+            <Insets right="16.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <Label text="%absenceNewViewTitle" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="23.0" prefWidth="699.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="151.0" text="%absenceNewViewCourse">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="courses" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="selectionBox" disable="true" prefHeight="210.0" prefWidth="534.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="474.0">
+                     <children>
+                        <HBox prefHeight="200.0" prefWidth="478.0">
+                           <children>
+                              <Label contentDisplay="CENTER" prefHeight="20.0" prefWidth="122.0" text="%date">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="dateOfAbsence" prefHeight="25.0" prefWidth="183.0" />
+                           </children>
+                        </HBox>
+                        <Label text="%absenceNewViewReason">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="reasonField" prefHeight="283.0" prefWidth="302.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox prefHeight="269.0" prefWidth="533.0">
+                     <children>
+                        <Label text="%absenceNewViewSelectStudent">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="students" prefHeight="200.0" prefWidth="480.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="16.0" right="16.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
